@@ -3,8 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CardContent, Card } from "@/components/ui/card";
 import { ArrowRight, GitGraph, ListOrdered, Menu, Share2 } from "lucide-react";
+import NavCard from "@/components/nav-card";
 
 export default function Home() {
+
+  const dataStructures = [
+    { title: "Stacks", description: "Visualise Last-In-First-Out (LIFO) data structures.", href: "/learn/stacks", icon: <ListOrdered className="h-12 w-12 text-primary" /> },
+    { title: "Queues", description: "Understand First-In-First-Out (FIFO) operations.", href: "/learn/queues", icon: <GitGraph className="h-12 w-12 text-primary" /> },
+    { title: "Graphs", description: "Visualise complex relationships and networks.", href: "/learn/graphs", icon: <Share2 className="h-12 w-12 text-primary" /> },
+  ];
   return (
     <main className="flex-1">
       <section className="w-full py-24 md:py-32 lg:py-48">
@@ -18,9 +25,7 @@ export default function Home() {
                 Explore and understand complex data structures through interactive visualisations.
               </p>
             </div>
-            <Link
-              href="/learn"
-            >
+            <Link href="/learn">
               <Button>Get Started</Button>
             </Link>
           </div>
@@ -30,51 +35,7 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Explore Data Structures</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="flex flex-col items-center space-y-4 p-6">
-                <ListOrdered className="h-12 w-12 text-primary" />
-                <h3 className="text-2xl font-bold text-center">Stacks</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-center">
-                  Visualise Last-In-First-Out (LIFO) data structures.
-                </p>
-                <Link href="/learn/stacks">
-                  <Button variant="outline" className="w-full">
-                    Explore Stacks
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center space-y-4 p-6">
-                <GitGraph className="h-12 w-12 text-primary" />
-                <h3 className="text-2xl font-bold text-center">Queues</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-center">
-                  Understand First-In-First-Out (FIFO) operations.
-                </p>
-                <Link href="/learn/queues">
-                  <Button variant="outline" className="w-full">
-                    Explore Queues
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent className="flex flex-col items-center space-y-4 p-6">
-                <Share2 className="h-12 w-12 text-primary" />
-                <h3 className="text-2xl font-bold text-center">Graphs</h3>
-                <p className="text-gray-500 dark:text-gray-400 text-center">
-                  Visualise complex relationships and networks.
-                </p>
-                <Link href="/learn/graphs">
-                  <Button variant="outline" className="w-full">
-                    Explore Graphs
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+            {dataStructures.map((ds, i) => <NavCard key={i} {...ds} />)}
           </div>
         </div>
       </section>
