@@ -2,7 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CardContent, Card } from "@/components/ui/card"
-import { ArrowRight, BarChart2, GitGraph, ListOrdered, Menu } from "lucide-react"
+import { ArrowRight, BarChart2, GitGraph, ListOrdered, Menu, Share2 } from "lucide-react"
 
 export default function Home() {
   return (
@@ -57,7 +57,7 @@ export default function Home() {
             </Card>
             <Card>
               <CardContent className="flex flex-col items-center space-y-4 p-6">
-                <BarChart2 className="h-12 w-12 text-primary" />
+                <Share2 className="h-12 w-12 text-primary" />
                 <h3 className="text-2xl font-bold text-center">Graphs</h3>
                 <p className="text-gray-500 dark:text-gray-400 text-center">
                   Visualize complex relationships and networks.
