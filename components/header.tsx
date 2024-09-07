@@ -4,7 +4,7 @@ import React from 'react'
 
 export function Header() {
   const nav = [
-    { href: "/", label: "Data Structures", icon: "", target: "" },
+    { href: "/learn", label: "Data Structures", icon: "", target: "" },
     { href: "/contact", label: "Contact", icon: "", target: "_blank" },
   ];
   return (
