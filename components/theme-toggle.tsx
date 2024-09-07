@@ -1,21 +1,40 @@
 "use client"
 
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { MoonIcon, SunIcon } from "lucide-react"
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import { Monitor, Sun, Moon } from "lucide-react";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
+
+  const themes = [
+    { name: "system", icon: <Monitor className="w-4 h-4" /> },
+    { name: "light", icon: <Sun className="w-4 h-4" /> },
+    { name: "dark", icon: <Moon className="w-4 h-4" /> },
+  ];
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-    >
-      <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <div className="flex items-center justify-center space-x-2 bg-background border rounded-full p-1">
+      {themes.map((item) => (
+        <button
+          key={item.name}
+          onClick={() => setTheme(item.name)}
+          className={`flex items-center justify-center w-8 h-8 rounded-full ${theme === item.name ? "bg-muted border" : ""
+            }`}
+          aria-label={`${item.name} theme`}
+        >
+          {item.icon}
+        </button>
+      ))}
+    </div>
   )
 }
