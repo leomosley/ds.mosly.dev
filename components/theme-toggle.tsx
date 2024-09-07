@@ -17,7 +17,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setMounted(true)
-  }, [])
+  }, []);
 
   return (
     <div className="flex items-center justify-center space-x-2 bg-background border rounded-full p-1">
@@ -40,5 +40,5 @@ export function ThemeToggle() {
         )
       ))}
     </div>
-  )
+  );
 }

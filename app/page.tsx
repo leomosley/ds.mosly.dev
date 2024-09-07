@@ -1,13 +1,13 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { CardContent, Card } from "@/components/ui/card"
-import { ArrowRight, GitGraph, ListOrdered, Menu, Share2 } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { CardContent, Card } from "@/components/ui/card";
+import { ArrowRight, GitGraph, ListOrdered, Menu, Share2 } from "lucide-react";
 
 export default function Home() {
   return (
     <main className="flex-1">
-      <section className="w-full py-24 lg:py-32 xl:py-48">
+      <section className="w-full py-24 md:py-32 lg:py-48">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -83,13 +83,16 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Coming Soon...</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 text-balance max-w-[675px]">
+              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 text-balance max-w-[650px]">
                 Watch out for some of the features coming soon. Or even sign up to be notified when new features are launched.
               </p>
             </div>
             <div className="w-full max-w-sm space-y-2">
-              <form className="flex space-x-2">
-                <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
+              <form className="flex space-x-2" action={async (formData: FormData) => {
+                "use server";
+                console.log(formData.get("email"));
+              }}>
+                <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" name="email" />
                 <Button type="submit">Subscribe</Button>
               </form>
             </div>
