@@ -1,17 +1,35 @@
 /**
- * A generic Stack implementation.
+ * A generic fixed-size Stack implementation.
  * 
  * @template T - The type of elements held in the stack.
  */
 class Stack<T> {
   private stack: T[] = [];
+  private maxSize: number;
+
+  /**
+   * Creates a new fixed-size stack.
+   * 
+   * @param maxSize - The maximum number of elements the stack can hold.
+   * @throws Error if maxSize is less than or equal to 0.
+   */
+  constructor(maxSize: number) {
+    if (maxSize <= 0) {
+      throw new Error("Stack size must be greater than 0");
+    }
+    this.maxSize = maxSize;
+  }
 
   /**
    * Pushes an item onto the stack.
    * 
    * @param item - The item to push onto the stack.
+   * @throws Error if the stack is full.
    */
   push(item: T): void {
+    if (this.isFull()) {
+      throw new Error("Stack overflow: cannot push onto a full stack");
+    }
     this.stack.push(item);
   }
 
@@ -43,12 +61,30 @@ class Stack<T> {
   }
 
   /**
+   * Checks if the stack is full.
+   * 
+   * @returns True if the stack is full, false otherwise.
+   */
+  isFull(): boolean {
+    return this.stack.length >= this.maxSize;
+  }
+
+  /**
    * Returns the number of items currently in the stack.
    * 
    * @returns The number of items in the stack.
    */
   size(): number {
     return this.stack.length;
+  }
+
+  /**
+   * Returns the maximum size of the stack.
+   * 
+   * @returns The maximum capacity of the stack.
+   */
+  getMaxSize(): number {
+    return this.maxSize;
   }
 
   /**
