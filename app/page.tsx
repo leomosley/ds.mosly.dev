@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CardContent, Card } from "@/components/ui/card";
-import { ArrowRight, GitGraph, ListOrdered, Menu, Share2 } from "lucide-react";
+import { GitGraph, ListOrdered, Share2 } from "lucide-react";
 import NavCard from "@/components/nav-card";
+
+export const dataStructures = [
+  { title: "Stacks", description: "Visualise Last-In-First-Out (LIFO) data structures.", href: "/learn/stacks", icon: <ListOrdered className="h-12 w-12 text-primary" /> },
+  { title: "Queues", description: "Understand First-In-First-Out (FIFO) operations.", href: "/learn/queues", icon: <GitGraph className="h-12 w-12 text-primary" /> },
+  { title: "Graphs", description: "Visualise complex relationships and networks.", href: "/learn/graphs", icon: <Share2 className="h-12 w-12 text-primary" /> },
+];
 
 export default function Home() {
 
-  const dataStructures = [
-    { title: "Stacks", description: "Visualise Last-In-First-Out (LIFO) data structures.", href: "/learn/stacks", icon: <ListOrdered className="h-12 w-12 text-primary" /> },
-    { title: "Queues", description: "Understand First-In-First-Out (FIFO) operations.", href: "/learn/queues", icon: <GitGraph className="h-12 w-12 text-primary" /> },
-    { title: "Graphs", description: "Visualise complex relationships and networks.", href: "/learn/graphs", icon: <Share2 className="h-12 w-12 text-primary" /> },
-  ];
   return (
     <main className="flex-1">
       <section className="w-full py-24 md:py-32 lg:py-48">

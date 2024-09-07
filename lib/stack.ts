@@ -1,0 +1,62 @@
+/**
+ * A generic Stack implementation.
+ * 
+ * @template T - The type of elements held in the stack.
+ */
+class Stack<T> {
+  private stack: T[] = [];
+
+  /**
+   * Pushes an item onto the stack.
+   * 
+   * @param item - The item to push onto the stack.
+   */
+  push(item: T): void {
+    this.stack.push(item);
+  }
+
+  /**
+   * Pops the last item off the stack and returns it.
+   * 
+   * @returns The last item added to the stack, or undefined if the stack is empty.
+   */
+  pop(): T | undefined {
+    return this.stack.pop();
+  }
+
+  /**
+   * Peeks at the top item on the stack without removing it.
+   * 
+   * @returns The top item on the stack, or undefined if the stack is empty.
+   */
+  peek(): T | undefined {
+    return this.stack[this.stack.length - 1];
+  }
+
+  /**
+   * Checks if the stack is empty.
+   * 
+   * @returns True if the stack is empty, false otherwise.
+   */
+  isEmpty(): boolean {
+    return this.stack.length === 0;
+  }
+
+  /**
+   * Returns the number of items currently in the stack.
+   * 
+   * @returns The number of items in the stack.
+   */
+  size(): number {
+    return this.stack.length;
+  }
+
+  /**
+   * Clears the stack of all items.
+   */
+  clear(): void {
+    this.stack = [];
+  }
+}
+
+export default Stack;

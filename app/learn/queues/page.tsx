@@ -1,5 +1,6 @@
 export default function Page() {
   return (
-    <div>Page</div>
+    <main className="flex-1 min-h-screen">
+    </main>
   );
 }
