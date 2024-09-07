@@ -1,4 +1,4 @@
-import { Share2, Target } from 'lucide-react';
+import { Share2 } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react'
 
@@ -8,7 +8,7 @@ export function Header() {
     { href: "/contact", label: "Contact", icon: "", target: "_blank" },
   ];
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center">
+    <header className="px-4 h-14 flex items-center border-b">
       <Link className="flex items-center justify-center" href="/">
         <Share2 className="h-6 w-6" />
       </Link>
