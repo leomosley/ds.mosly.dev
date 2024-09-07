@@ -15,7 +15,7 @@ export default function Home() {
                 Visualize Data Structures with Ease
               </h1>
               <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                Explore and understand complex data structures through interactive visualizations.
+                Explore and understand complex data structures through interactive visualisations.
               </p>
             </div>
             <div className="space-x-4">
