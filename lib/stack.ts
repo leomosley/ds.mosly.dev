@@ -4,7 +4,7 @@
  * @template T - The type of elements held in the stack.
  */
 class Stack<T> {
-  private stack: T[] = [];
+  public stack: T[] = [];
   private maxSize: number;
 
   /**
