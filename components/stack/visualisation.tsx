@@ -41,7 +41,7 @@ export function Visualisation() {
                 : "shadow-inner"
             )}
           >
-            <span className="font-bold text-xl">
+            <span className="font-bold text-xl text-primary dark:text-background">
               {maxSize - size <= index && stackContents[(maxSize - 1) - index]}
             </span>
           </div>
