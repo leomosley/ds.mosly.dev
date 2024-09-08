@@ -88,6 +88,15 @@ class Queue<T> {
   }
 
   /**
+   * Returns a copy of the current queue.
+   * 
+   * @returns A copy of the queue as an array.
+   */
+  view(): T[] {
+    return [...this.queue]; // Return a shallow copy of the queue array
+  }
+
+  /**
    * Clears the queue of all items.
    */
   clear(): void {

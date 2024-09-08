@@ -39,6 +39,9 @@ class Stack<T> {
    * @returns The last item added to the stack, or undefined if the stack is empty.
    */
   pop(): T | undefined {
+    if (this.isEmpty()) {
+      throw new Error("Cannot pop from a empty stack");
+    }
     return this.stack.pop();
   }
 
@@ -48,6 +51,9 @@ class Stack<T> {
    * @returns The top item on the stack, or undefined if the stack is empty.
    */
   peek(): T | undefined {
+    if (this.isEmpty()) {
+      throw new Error("Cannot peek from a empty stack");
+    }
     return this.stack[this.stack.length - 1];
   }
 
@@ -76,6 +82,15 @@ class Stack<T> {
    */
   size(): number {
     return this.stack.length;
+  }
+
+  /**
+   * Returns a copy of the current stack.
+   * 
+   * @returns A copy of the stack as an array.
+   */
+  view(): T[] {
+    return [...this.stack]; // Return a shallow copy of the stack array
   }
 
   /**
