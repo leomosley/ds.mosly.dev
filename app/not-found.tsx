@@ -24,8 +24,7 @@ export default function NotFound() {
       <p className="text-xl/relaxed text-muted-foreground mb-8 text-center">{randomPun}</p>
       <div className="w-full max-w-md p-8 bg-card rounded-lg shadow-lg border">
         <p className="text-card-foreground mb-6 text-center">
-          Don't worry, even the best algorithms sometimes fail to find what they're looking for.
-          Let's get you back to a known node in our application tree.
+          {"Don't worry, even the best algorithms sometimes fail to find what they're looking for. Let's get you back to a known node in our application tree."}
         </p>
         <Link href="/" passHref>
           <Button className="w-full">

@@ -7,7 +7,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export function Visualisation() {
-  const { stackContents, push, pop, clear, isFull, isEmpty, size, maxSize } = useStackState<number>(5);
+  const { stackContents, push, pop, size, maxSize } = useStackState<number>(5);
   const [count, setCount] = useState<number>(1);
 
   const handlePop = () => {

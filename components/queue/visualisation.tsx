@@ -7,7 +7,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export function Visualisation() {
-  const { queueContents, dequeue, enqueue, clear, isFull, isEmpty, size, maxSize } = useQueueState<number>(5);
+  const { queueContents, dequeue, enqueue, size, maxSize } = useQueueState<number>(5);
   const [count, setCount] = useState<number>(1);
 
   const handleDequeue = () => {
