@@ -10,9 +10,6 @@ export function Footer() {
         <Link className="text-xs hover:underline underline-offset-4" href="/contact">
           Contact
         </Link>
-        <Link className="text-xs hover:underline underline-offset-4" href="/about">
-          About
-        </Link>
         <a
           className="cursor-pointer"
           href="https://github.com/leomosley/ds.mosly.dev"
@@ -26,6 +23,9 @@ export function Footer() {
             width={500}
           />
         </a>
+        <Link className="text-xs hover:underline underline-offset-4" href="/about">
+          About
+        </Link>
       </nav>
       <ThemeToggle />
     </footer>
