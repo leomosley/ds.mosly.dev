@@ -35,13 +35,15 @@ export function Visualisation() {
           <div
             key={index}
             className={cn(
-              "w-[200px] h-[70px] bg-muted/50 rounded-lg",
+              "flex w-[200px] h-[70px] bg-muted/50 rounded-lg justify-center items-center",
               (maxSize - size) <= index
                 ? "bg-green-100 shadow-sm"
                 : "shadow-inner"
             )}
           >
-            {maxSize - size <= index && stackContents[(maxSize - 1) - index]}
+            <span className="font-bold text-xl">
+              {maxSize - size <= index && stackContents[(maxSize - 1) - index]}
+            </span>
           </div>
         ))}
       </div>
