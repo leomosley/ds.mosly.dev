@@ -16,17 +16,22 @@ export function LearnHeader() {
   const paths = pathname.split('/');
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="mb-2">
       <BreadcrumbList>
         {paths.map((path, index) => (
           <Fragment key={index}>
             {index > 0 && <BreadcrumbSeparator />}
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/${paths.slice(0, index + 1).join('/')}`}>{path === "" ? "Home" : capatalise(path)}</BreadcrumbLink>
+              <BreadcrumbLink
+                href={path === "" ? '/' : `${paths.slice(0, index + 1).join('/')}`}
+                className="text-base/relaxed"
+              >
+                {path === "" ? "Home" : capatalise(path)}
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }
