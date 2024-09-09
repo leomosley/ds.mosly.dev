@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="flex flex-col justify-between gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+    <footer className="flex justify-between gap-2 py-6 w-full shrink-0 items-center px-4 border-t mt-12 sm:mt-0">
       <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Leo Mosley. All rights reserved.</p>
       <nav className="flex gap-4 sm:gap-6 items-center">
         <Link className="text-xs hover:underline underline-offset-4" href="/contact">
