@@ -7,7 +7,7 @@ export default function LearnLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex gap-2 h-screen items-start">
+    <main className="flex gap-2 min-h-screen h-full">
       <Sidebar />
       <article className="flex flex-col flex-grow p-4">
         <LearnHeader />
