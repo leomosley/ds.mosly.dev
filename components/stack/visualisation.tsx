@@ -14,7 +14,6 @@ export function Visualisation() {
   const handlePop = () => {
     try {
       pop();
-      setCount(prev => prev - 1);
     } catch (error) {
       toast.warning(String(error));
     }
