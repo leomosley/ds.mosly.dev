@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useStackState } from "@/hooks/useStackState";
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowBigLeft, ArrowBigLeftDash, ArrowLeft, ChevronLeft } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 
 export function Visualisation() {
   const { stackContents, push, pop, size, maxSize } = useStackState<number>(5);
