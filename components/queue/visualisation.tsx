@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useQueueState } from "@/hooks/useQueueState";
 import { useState } from "react";
 import { toast } from "sonner";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export function Visualisation() {
   const { queueContents, dequeue, enqueue, size, maxSize } = useQueueState<number>(5);
@@ -13,7 +14,6 @@ export function Visualisation() {
   const handleDequeue = () => {
     try {
       dequeue();
-      setCount(prev => prev - 1);
     } catch (error) {
       toast.warning(String(error));
     }
@@ -35,12 +35,36 @@ export function Visualisation() {
           <div
             key={index}
             className={cn(
-              "flex w-[70px] h-[180px] bg-muted/50 rounded-lg justify-center items-center",
+              "relative flex w-[70px] h-[180px] bg-muted/50 rounded-lg justify-center items-center",
               size > index
                 ? "bg-green-100 shadow-sm"
                 : "shadow-inner"
             )}
           >
+            {((size) === index && (size > 0)) && (
+              <div className="flex absolute -top-8">
+                <div className="flex items-center text-base/relaxed font-medium">
+                  <ChevronDown className="h-5 w-5" />
+                  Tail
+                </div>
+              </div>
+            )}
+            {(index === 0) && (
+              <div className="flex absolute -top-8">
+                <div className="flex items-center text-base/relaxed font-medium">
+                  <ChevronDown className="h-5 w-5" />
+                  Head
+                </div>
+              </div>
+            )}
+            {index === 0 && !size && (
+              <div className="flex absolute -bottom-8">
+                <div className="flex items-center text-base/relaxed font-medium">
+                  <ChevronUp className="h-5 w-5" />
+                  Tail
+                </div>
+              </div>
+            )}
             <span className="font-bold text-xl text-primary dark:text-background">
               {size > index && queueContents[index]}
             </span>
