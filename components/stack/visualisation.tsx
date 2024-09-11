@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useStackState } from "@/hooks/useStackState";
 import { useState } from "react";
 import { toast } from "sonner";
+import { ArrowBigLeft, ArrowBigLeftDash, ArrowLeft, ChevronLeft } from "lucide-react";
 
 export function Visualisation() {
   const { stackContents, push, pop, size, maxSize } = useStackState<number>(5);
@@ -35,12 +36,20 @@ export function Visualisation() {
           <div
             key={index}
             className={cn(
-              "flex w-[200px] h-[70px] bg-muted/50 rounded-lg justify-center items-center",
+              "flex relative w-[200px] h-[70px] bg-muted/50 rounded-lg justify-center items-center",
               (maxSize - size) <= index
                 ? "bg-green-100 shadow-sm"
                 : "shadow-inner"
             )}
           >
+            {(maxSize - size) === index && (
+              <div className="flex absolute top-6 -right-14">
+                <div className="flex items-center text-base/relaxed font-medium">
+                  <ChevronLeft className="h-5 w-5" />
+                  Top
+                </div>
+              </div>
+            )}
             <span className="font-bold text-xl text-primary dark:text-background">
               {maxSize - size <= index && stackContents[(maxSize - 1) - index]}
             </span>
