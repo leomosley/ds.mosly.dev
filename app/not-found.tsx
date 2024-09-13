@@ -17,7 +17,6 @@ const dataPuns = [
 
 export default function NotFound() {
   const randomPun = dataPuns[Math.floor(Math.random() * dataPuns.length)];
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground px-4">
       <h1 className="text-4xl sm:text-6xl font-extrabold mb-4">404</h1>

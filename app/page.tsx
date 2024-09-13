@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { GitGraph, ListOrdered, Share2 } from "lucide-react";
 import NavCard from "@/components/nav-card";
 
-
 export default function Home() {
   const dataStructures = [
     { title: "Stacks", description: "Visualise Last-In-First-Out (LIFO) data structures.", href: "/learn/stacks", icon: <ListOrdered className="h-12 w-12 text-primary" /> },
