@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CardContent, Card } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 
-export default function NavCard({
+export function NavCard({
   title,
   description,
   href,
@@ -22,7 +22,7 @@ export default function NavCard({
         <p className="text-gray-500 dark:text-gray-400 text-center">
           {description}
         </p>
-        <Link href={href}>
+        <Link href={href} prefetch={false}>
           <Button variant="outline" className="w-full">
             Explore {title}
             <ArrowRight className="ml-2 h-4 w-4" />

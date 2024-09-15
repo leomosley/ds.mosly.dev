@@ -1,4 +1,4 @@
-import NavCard from "@/components/nav-card";
+import { NavCard } from "@/components/nav-card";
 import { GitGraph, ListOrdered, Share2 } from "lucide-react";
 
 export default function Page() {

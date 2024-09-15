@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GitGraph, ListOrdered, Share2 } from "lucide-react";
-import NavCard from "@/components/nav-card";
+import { NavCard } from "@/components/nav-card";
 
 export default function Home() {
   const dataStructures = [
