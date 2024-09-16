@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CardContent, Card } from "@/components/ui/card";
@@ -22,7 +24,7 @@ export function NavCard({
         <p className="text-gray-500 dark:text-gray-400 text-center">
           {description}
         </p>
-        <Link href={href} prefetch={false}>
+        <Link href={href}>
           <Button variant="outline" className="w-full">
             Explore {title}
             <ArrowRight className="ml-2 h-4 w-4" />

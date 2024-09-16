@@ -36,12 +36,15 @@ export const useVisibleSections = (ignoredSectionIds: string[] = []) => {
     const sectionElements = Array.from(document.querySelectorAll('main section[id]'))
       .filter(section => !ignoredSectionIds.includes(section.id));
 
-    setSections(sectionElements.map(section => ({
-      id: section.id,
-      isVisible: false
-    })));
+    // Only update sections if they are found
+    if (sectionElements.length > 0) {
+      setSections(sectionElements.map(section => ({
+        id: section.id,
+        isVisible: false
+      })));
 
-    updateVisibility();
+      updateVisibility();
+    }
 
     window.addEventListener('scroll', updateVisibility);
     window.addEventListener('resize', updateVisibility);
