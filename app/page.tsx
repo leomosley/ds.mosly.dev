@@ -3,12 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { GitGraph, ListOrdered, Share2 } from "lucide-react";
 import { NavCard } from "@/components/nav-card";
+import { Marquee } from "@/components/marquee";
 
 export default function Home() {
   const dataStructures = [
     { title: "Stacks", description: "Visualise Last-In-First-Out (LIFO) data structures.", href: "/learn/stacks", icon: <ListOrdered className="h-12 w-12 text-primary" /> },
     { title: "Queues", description: "Understand First-In-First-Out (FIFO) operations.", href: "/learn/queues", icon: <GitGraph className="h-12 w-12 text-primary" /> },
     { title: "Graphs", description: "Visualise complex relationships and networks.", href: "/learn/graphs", icon: <Share2 className="h-12 w-12 text-primary" /> },
+  ];
+
+  const comingSoon = [
+    { title: "Feature 1" },
+    { title: "Feature 2" },
+    { title: "Feature 3" },
+    { title: "Feature 4" },
   ];
 
   return (
@@ -55,6 +63,13 @@ export default function Home() {
                 <Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" name="email" />
                 <Button type="submit">Subscribe</Button>
               </form>
+            </div>
+            <div className="w-full">
+              <Marquee>
+                {comingSoon.map((item, index) => (
+                  <span key={index} className="mx-4">{item.title}</span>
+                ))}
+              </Marquee>
             </div>
           </div>
         </div>
