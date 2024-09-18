@@ -64,13 +64,11 @@ export default function Home() {
                 <Button type="submit">Subscribe</Button>
               </form>
             </div>
-            <div className="w-full">
-              <Marquee>
-                {comingSoon.map((item, index) => (
-                  <span key={index} className="mx-4">{item.title}</span>
-                ))}
-              </Marquee>
-            </div>
+            <Marquee>
+              {comingSoon.map((item, index) => (
+                <span key={index} className="mx-4">{item.title}</span>
+              ))}
+            </Marquee>
           </div>
         </div>
       </section>
