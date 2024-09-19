@@ -13,10 +13,7 @@ export default function Home() {
   ];
 
   const comingSoon = [
-    { title: "Feature 1" },
-    { title: "Feature 2" },
-    { title: "Feature 3" },
-    { title: "Feature 4" },
+    { title: "Algorithms" },
   ];
 
   return (
