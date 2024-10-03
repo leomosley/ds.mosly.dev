@@ -17,7 +17,7 @@ export default function Page() {
     { title: "Start from the beginning", description: "Your knew to this topic and want to start from the very beginning.", type: "goal" },
   ];
 
-  const [selected, setSelected] = useState<options[]>();
+  // const [selected, setSelected] = useState<options[]>();
 
   return (
     <main className="flex flex-col md:max-w-4xl mx-auto min-h-screen">
