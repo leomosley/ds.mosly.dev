@@ -1,8 +1,5 @@
-"use client";
-
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
 
 type options = {
   title: string;
@@ -16,8 +13,6 @@ export default function Page() {
     { title: "Refresh the basics", description: "You know your stuff but need a quick refresh of the basics.", type: "goal" },
     { title: "Start from the beginning", description: "Your knew to this topic and want to start from the very beginning.", type: "goal" },
   ];
-
-  // const [selected, setSelected] = useState<options[]>();
 
   return (
     <main className="flex flex-col md:max-w-4xl mx-auto min-h-screen">
