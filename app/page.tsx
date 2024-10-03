@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { GitGraph, ListOrdered, Share2 } from "lucide-react";
 import { NavCard } from "@/components/nav-card";
 import { Marquee } from "@/components/marquee";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export default function Home() {
   const dataStructures = [
@@ -29,8 +30,8 @@ export default function Home() {
                 Explore and understand complex data structures through interactive visualisations.
               </p>
             </div>
-            <Link href="/learn">
-              <Button>Get Started</Button>
+            <Link href="/quick-start">
+              <RainbowButton>Get Started</RainbowButton>
             </Link>
           </div>
         </div>
